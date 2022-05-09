@@ -1,4 +1,7 @@
-# Hardware-Embedded-Bonsai
+# Hardware Engineeering and Advanced Embedded Lab
+
+Team Bonsai
+
 Github Repository belongs to the following members:
 1) Shehroz Bashir Malik
 2) Christian Stratmann
