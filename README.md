@@ -1,4 +1,4 @@
-# Hardware Engineeering and Advanced Embedded Lab
+# Hardware Engineering and Advanced Embedded Lab
 
 Team Bonsai
 
