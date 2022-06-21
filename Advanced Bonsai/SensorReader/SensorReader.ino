@@ -34,9 +34,9 @@ char pass[] = "kitkatandbounty";    // your network password (use for WPA, or us
 WiFiClient wifiClient;
 MqttClient mqttClient(wifiClient);
 
-const char broker[] = "test.mosquitto.org";
+const char broker[] = "192.168.178.46";
 int        port     = 1883;
-const char topic[]  = "real_unique_topic";
+const char topic[]  = "testTopic";
 
 void Fan()
 {
@@ -190,6 +190,6 @@ void loop() {
   Fan();
 
   mqttClient.beginMessage(topic);
-  mqttClient.print(Rvalue);
+  mqttClient.print(tem);
   mqttClient.endMessage();
 }
