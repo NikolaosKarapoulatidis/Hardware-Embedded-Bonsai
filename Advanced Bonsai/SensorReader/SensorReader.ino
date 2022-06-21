@@ -1,0 +1,153 @@
+#include "DHT.h"
+
+#define ledr 3
+#define ledg 5
+#define ledb 6
+
+#define photor 0
+float LED_Multiplier = 0.8;
+
+#define circulation_fan 9
+#define exhaust_fan 10
+int fan_interval = 10000;
+
+#define DHTPIN 2
+#define DHTTYPE DHT11 // DHT 11
+DHT dht(DHTPIN, DHTTYPE);
+float hum = dht.readHumidity();
+float tem = dht.readTemperature();
+float maxhum = 69;
+float maxtem = 32;
+long current_time = millis();
+long old_time = 0;
+
+#define Echo_InputPin 7 // Echo input pin
+#define Trigger_OutputPin 8 // Trigger output pin
+
+void Fan()
+{
+  if (hum > maxhum || tem > maxtem)
+  {
+    Serial.println("Exhaust fan on");
+    //digitalWrite(exhaust_fan, 1);
+  }
+  else
+  {
+    Serial.println("Exhaust fan off");
+    //digitalWrite(exhaust_fan, 0);
+  }
+
+  if (current_time - old_time > fan_interval)
+  {
+    Serial.println("Circulation fan on");
+    //digitalWrite(circulation_fan, 1);
+  }
+  if (current_time - old_time > (2 * fan_interval))
+  {
+    Serial.println("Circulation fan off");
+    old_time = millis();
+    //digitalWrite(circulation_fan, 0);
+  }
+}
+
+void Lightstrength(float multiplier)
+{
+  int strength = 0;
+  strength = map(analogRead(photor), 40, 460, 0, 255);
+  strength = strength * multiplier;
+  analogWrite(ledr, strength);
+  analogWrite(ledg, strength);
+  analogWrite(ledb, strength);
+
+}
+
+void MotorLight() //Keep distance between 30 and 50 cm
+{
+  int distance = Distance();
+  if (distance < 30)
+  {
+    Serial.println("Increase height of LED.");
+  }
+  if (distance > 50)
+  {
+    Serial.println("Lower height of LED.");
+  }
+  return;
+}
+
+int Distance() {
+  int maximumRange = 300;
+  int minimumRange = 2;
+  long distance;
+  long duration;
+
+  // Distance measurement is started
+  digitalWrite (Trigger_OutputPin, HIGH);
+  delayMicroseconds (10);
+  digitalWrite (Trigger_OutputPin, LOW);
+
+  // Wait for the echo input until the signal has been activated
+  duration = pulseIn (Echo_InputPin, HIGH);
+
+  // Distance calculation
+  distance = duration / 58.2;
+
+  // Check whether the measured value is within the permissible distance
+  if (distance >= maximumRange || distance <= minimumRange)
+  {
+    return 301;
+  }
+
+  else
+  {
+    return distance;
+  }
+}
+
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin (115200);
+  dht.begin();
+
+  pinMode(ledr, OUTPUT);
+  pinMode(ledg, OUTPUT);
+  pinMode(ledb, OUTPUT);
+
+  pinMode(Trigger_OutputPin, OUTPUT);
+  pinMode(Echo_InputPin, INPUT);
+
+  pinMode(A0, INPUT);
+
+  digitalWrite(ledr, 1);
+  digitalWrite(ledg, 1);
+  digitalWrite(ledb, 1);
+
+  pinMode(exhaust_fan, OUTPUT);
+  pinMode(circulation_fan, OUTPUT);
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  delay(1000);
+  current_time = millis();
+
+  Serial.print("Distance: ");
+  Serial.println(Distance());
+  MotorLight();
+
+  hum = dht.readHumidity();
+  tem = dht.readTemperature();
+  Serial.print("Temperature: ");
+  Serial.print(tem);
+  Serial.print(", Humidity: ");
+  Serial.println(hum);
+
+  Serial.print("Light intensity: ");
+  Serial.println(analogRead(photor));
+  Lightstrength(LED_Multiplier);
+
+  Serial.println();
+
+  Fan();
+}
