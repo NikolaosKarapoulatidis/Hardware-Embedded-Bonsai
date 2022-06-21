@@ -24,6 +24,20 @@ long old_time = 0;
 #define Echo_InputPin 7 // Echo input pin
 #define Trigger_OutputPin 8 // Trigger output pin
 
+#include <ArduinoMqttClient.h>
+#include <WiFiNINA.h>
+
+///////please enter your sensitive data in the Secret tab/arduino_secrets.h
+char ssid[] = "Corvo Bianco";        // your network SSID (name)
+char pass[] = "kitkatandbounty";    // your network password (use for WPA, or use as key for WEP)
+
+WiFiClient wifiClient;
+MqttClient mqttClient(wifiClient);
+
+const char broker[] = "test.mosquitto.org";
+int        port     = 1883;
+const char topic[]  = "real_unique_topic";
+
 void Fan()
 {
   if (hum > maxhum || tem > maxtem)
@@ -107,6 +121,29 @@ int Distance() {
 void setup() {
   // put your setup code here, to run once:
   Serial.begin (115200);
+
+  // attempt to connect to Wifi network:
+  Serial.print("Attempting to connect to WPA SSID: ");
+  Serial.println(ssid);
+  while (WiFi.begin(ssid, pass) != WL_CONNECTED) {
+    // failed, retry
+    Serial.print(".");
+    delay(5000);
+  }
+
+  Serial.println("Connected to the network");
+  Serial.println();
+  Serial.print("Attempting to connect to the MQTT broker: ");
+  Serial.println(broker);
+
+  if (!mqttClient.connect(broker, port)) {
+    Serial.print("MQTT connection failed! Error code = ");
+    Serial.println(mqttClient.connectError());
+    while (1);
+  }
+  Serial.println("Connected to the MQTT broker!");
+  Serial.println();
+
   dht.begin();
 
   pinMode(ledr, OUTPUT);
@@ -130,6 +167,7 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   delay(1000);
+  mqttClient.poll(); //keep the connection alive
   current_time = millis();
 
   Serial.print("Distance: ");
@@ -150,4 +188,8 @@ void loop() {
   Serial.println();
 
   Fan();
+
+  mqttClient.beginMessage(topic);
+  mqttClient.print(Rvalue);
+  mqttClient.endMessage();
 }
