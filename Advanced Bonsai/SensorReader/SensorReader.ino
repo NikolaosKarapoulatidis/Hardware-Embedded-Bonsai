@@ -40,6 +40,8 @@ const char broker[] = "192.168.178.46";
 int        port     = 1883;
 const char topic[]  = "testTopic";
 
+const char topic2[]  = "lightIntensity"; //NEW
+
 void Fan()
 {
   if (hum > maxhum || tem > maxtem)
@@ -169,7 +171,40 @@ void setup() {
   pinMode(exhaust_fan, OUTPUT);
   pinMode(circulation_fan, OUTPUT);
 
+ // set the message receive callback         //NEW
+  mqttClient.onMessage(onMqttMessage);
+
+  Serial.print("Subscribing to topic: ");
+  Serial.println(topic);
+  Serial.println();
+
+  // subscribe to a topic
+  mqttClient.subscribe(topic2);
+
+
 }
+
+
+void onMqttMessage(int lightIntens) {                           //NEW
+  // we received a message, print out the topic and contents
+  Serial.println("Received a message with topic '");
+  Serial.print(mqttClient.messageTopic());
+
+  Serial.print(lightIntens);
+
+  // use the Stream interface to print the contents
+  while (mqttClient.available()) {
+    Serial.print((char)mqttClient.read());
+  }
+  Serial.println();
+  Serial.println();
+
+  LED_Multiplier = lightIntens / 100;  //percentage divided by 100 = value between 0 and 1
+
+  return LED_Multiplier;
+
+}
+
 
 void loop() {
   // put your main code here, to run repeatedly:
