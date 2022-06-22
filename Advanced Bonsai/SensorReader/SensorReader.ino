@@ -6,10 +6,12 @@
 
 #define photor 0
 float LED_Multiplier = 0.8;
+int led_percentage = 0;
 
 #define circulation_fan 9
 #define exhaust_fan 10
 int fan_interval = 10000;
+bool ex_fan = false, cir_fan = false;
 
 #define DHTPIN 2
 #define DHTTYPE DHT11 // DHT 11
@@ -43,10 +45,12 @@ void Fan()
   if (hum > maxhum || tem > maxtem)
   {
     Serial.println("Exhaust fan on");
+    ex_fan = true;
     //digitalWrite(exhaust_fan, 1);
   }
   else
   {
+    ex_fan = false;
     Serial.println("Exhaust fan off");
     //digitalWrite(exhaust_fan, 0);
   }
@@ -54,12 +58,14 @@ void Fan()
   if (current_time - old_time > fan_interval)
   {
     Serial.println("Circulation fan on");
+    cir_fan = true;
     //digitalWrite(circulation_fan, 1);
   }
   if (current_time - old_time > (2 * fan_interval))
   {
     Serial.println("Circulation fan off");
     old_time = millis();
+    cir_fan = false;
     //digitalWrite(circulation_fan, 0);
   }
 }
@@ -69,6 +75,7 @@ void Lightstrength(float multiplier)
   int strength = 0;
   strength = map(analogRead(photor), 40, 460, 0, 255);
   strength = strength * multiplier;
+  led_percentage = (strength / 255) * 100;
   analogWrite(ledr, strength);
   analogWrite(ledg, strength);
   analogWrite(ledb, strength);
@@ -189,7 +196,19 @@ void loop() {
 
   Fan();
 
-  mqttClient.beginMessage(topic);
+  mqttClient.beginMessage(topic);led_percentage
+  mqttClient.print("temperature: ");
   mqttClient.print(tem);
+  mqttClient.print(", humidity: ");
+  mqttClient.println(hum);
+
+  mqttClient.print("Exhaust fan: ");
+  mqttClient.print(ex_fan);
+  mqttClient.print(", circulation fan: ");
+  mqttClient.println(cir_fan);
+
+  mqttClient.print("LED strength: ");
+  mqttClient.print(led_percentage);
+  mqttClient.print(" percent");
   mqttClient.endMessage();
 }
