@@ -1,0 +1,42 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to X:/Git/Hardware-Embedded-Bonsai/Xilinx Implementation/VGADriver/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.21 secs
+ 
+--> Parameter xsthdpdir set to X:/Git/Hardware-Embedded-Bonsai/Xilinx Implementation/VGADriver/xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.21 secs
+ 
+--> WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "X:/Git/Hardware-Embedded-Bonsai/Xilinx Implementation/VGADriver/VGADriver.vhd" in Library work.
+Entity <vga_driver> compiled.
+ERROR:HDLParsers:3313 - "X:/Git/Hardware-Embedded-Bonsai/Xilinx Implementation/VGADriver/VGADriver.vhd" Line 108. Undefined symbol 'elseif'.  Should it be: 'else if' or elsif?
+ERROR:HDLParsers:1209 - "X:/Git/Hardware-Embedded-Bonsai/Xilinx Implementation/VGADriver/VGADriver.vhd" Line 108. elseif: Undefined symbol (last report in this block)
+ERROR:HDLParsers:164 - "X:/Git/Hardware-Embedded-Bonsai/Xilinx Implementation/VGADriver/VGADriver.vhd" Line 108. parse error, unexpected THEN, expecting OPENPAR or TICK or LSQBRACK
+ERROR:HDLParsers:164 - "X:/Git/Hardware-Embedded-Bonsai/Xilinx Implementation/VGADriver/VGADriver.vhd" Line 114. parse error, unexpected IF, expecting PROCESS
+ERROR:HDLParsers:3313 - "X:/Git/Hardware-Embedded-Bonsai/Xilinx Implementation/VGADriver/VGADriver.vhd" Line 150. Undefined symbol 'elseif'.  Should it be: 'else if' or elsif?
+ERROR:HDLParsers:1209 - "X:/Git/Hardware-Embedded-Bonsai/Xilinx Implementation/VGADriver/VGADriver.vhd" Line 150. elseif: Undefined symbol (last report in this block)
+ERROR:HDLParsers:164 - "X:/Git/Hardware-Embedded-Bonsai/Xilinx Implementation/VGADriver/VGADriver.vhd" Line 150. parse error, unexpected THEN, expecting OPENPAR or TICK or LSQBRACK
+ERROR:HDLParsers:164 - "X:/Git/Hardware-Embedded-Bonsai/Xilinx Implementation/VGADriver/VGADriver.vhd" Line 157. parse error, unexpected ELSE, expecting END
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.28 secs
+ 
+--> 
+
+Total memory usage is 4469140 kilobytes
+
+Number of errors   :    8 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

@@ -1,0 +1,5 @@
+set -tmpdir "X:/Git/Hardware-Embedded-Bonsai/Xilinx Implementation/VGADriver/xst/projnav.tmp"
+set -xsthdpdir "X:/Git/Hardware-Embedded-Bonsai/Xilinx Implementation/VGADriver/xst"
+elaborate
+-ifn VGADriver.prj
+-ifmt mixed

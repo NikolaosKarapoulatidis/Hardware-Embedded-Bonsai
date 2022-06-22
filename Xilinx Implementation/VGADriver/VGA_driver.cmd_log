@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "X:/Git/Hardware-Embedded-Bonsai/Xilinx Implementation/VGADriver/VGA_driver.xst" -ofn "X:/Git/Hardware-Embedded-Bonsai/Xilinx Implementation/VGADriver/VGA_driver.syr" 
