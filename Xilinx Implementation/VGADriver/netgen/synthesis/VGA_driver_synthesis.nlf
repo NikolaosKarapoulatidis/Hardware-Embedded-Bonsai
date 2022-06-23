@@ -1,0 +1,19 @@
+Release 14.7 - netgen P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Command Line: netgen -intstyle ise -ar Structure -tm VGA_driver -w -dir
+netgen/synthesis -ofmt vhdl -sim VGA_driver.ngc VGA_driver_synthesis.vhd  
+
+Reading design 'VGA_driver.ngc' ...
+Flattening design ...
+Processing design ... 
+  Preping design's networks ...
+  Preping design's macros ...
+Writing VHDL netlist 'X:\Git\Hardware-Embedded-Bonsai\Xilinx
+Implementation\VGADriver\netgen\synthesis\VGA_driver_synthesis.vhd' ...
+INFO:NetListWriters:635 - The generated VHDL netlist contains Xilinx UNISIM
+   simulation primitives and has to be used with UNISIM library for correct
+   compilation and simulation. 
+Number of warnings: 0
+Number of info messages: 1
+Total memory usage is 4388304 kilobytes
