@@ -38,9 +38,34 @@ MqttClient mqttClient(wifiClient);
 
 const char broker[] = "192.168.178.46";
 int        port     = 1883;
-const char topic[]  = "testTopic";
+const char topictem[]  = "Topictem";
+const char topichum[]  = "Topichum";
 
 const char topic2[]  = "lightIntensity"; //NEW
+const char topicmaxtem[]  = "Topicmaxtem";
+const char topicmaxhum[]  = "Topicmaxhum";
+
+
+
+void onMqttMessage(int lightIntens) {                           //NEW
+  // we received a message, print out the topic and contents
+  Serial.println("Received a message with topic '");
+  Serial.print(mqttClient.messageTopic());
+
+  Serial.print(lightIntens);
+
+  // use the Stream interface to print the contents
+  while (mqttClient.available()) {
+    Serial.print((char)mqttClient.read());
+  }
+  Serial.println();
+  Serial.println();
+
+  LED_Multiplier = lightIntens / 100;  //percentage divided by 100 = value between 0 and 1
+
+  return LED_Multiplier;
+
+}
 
 void Fan()
 {
@@ -171,7 +196,7 @@ void setup() {
   pinMode(exhaust_fan, OUTPUT);
   pinMode(circulation_fan, OUTPUT);
 
- // set the message receive callback         //NEW
+  // set the message receive callback         //NEW
   mqttClient.onMessage(onMqttMessage);
 
   Serial.print("Subscribing to topic: ");
@@ -183,28 +208,6 @@ void setup() {
 
 
 }
-
-
-void onMqttMessage(int lightIntens) {                           //NEW
-  // we received a message, print out the topic and contents
-  Serial.println("Received a message with topic '");
-  Serial.print(mqttClient.messageTopic());
-
-  Serial.print(lightIntens);
-
-  // use the Stream interface to print the contents
-  while (mqttClient.available()) {
-    Serial.print((char)mqttClient.read());
-  }
-  Serial.println();
-  Serial.println();
-
-  LED_Multiplier = lightIntens / 100;  //percentage divided by 100 = value between 0 and 1
-
-  return LED_Multiplier;
-
-}
-
 
 void loop() {
   // put your main code here, to run repeatedly:
@@ -231,19 +234,11 @@ void loop() {
 
   Fan();
 
-  mqttClient.beginMessage(topic);led_percentage
-  mqttClient.print("temperature: ");
+  mqttClient.beginMessage(topictem);
   mqttClient.print(tem);
-  mqttClient.print(", humidity: ");
+  mqttClient.endMessage();
+
+  mqttClient.beginMessage(topichum);
   mqttClient.println(hum);
-
-  mqttClient.print("Exhaust fan: ");
-  mqttClient.print(ex_fan);
-  mqttClient.print(", circulation fan: ");
-  mqttClient.println(cir_fan);
-
-  mqttClient.print("LED strength: ");
-  mqttClient.print(led_percentage);
-  mqttClient.print(" percent");
   mqttClient.endMessage();
 }
