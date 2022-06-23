@@ -1,0 +1,9 @@
+
+NET "CLK" LOC = "K12" ;
+NET "RST" LOC = "P14" ;
+
+NET "HSYNC" LOC = "F12" ;
+NET "VSYNC" LOC = "G12" ;
+NET "RGB<0>" LOC = "H14"   ;
+NET "RGB<1>" LOC = "H13"   ;
+NET "RGB<2>" LOC = "J12"   ;
