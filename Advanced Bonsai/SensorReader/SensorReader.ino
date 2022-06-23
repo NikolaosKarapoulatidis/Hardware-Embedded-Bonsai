@@ -47,23 +47,25 @@ const char topicmaxhum[]  = "Topicmaxhum";
 
 
 
-void onMqttMessage(int lightIntens) {                           //NEW
+void onMqttMessage(int lengthmsg) {
+  int cnt = lengthmsg - 1;
+  char x;
+  float lightIntens = 0;
   // we received a message, print out the topic and contents
   Serial.println("Received a message with topic '");
   Serial.print(mqttClient.messageTopic());
 
-  Serial.print(lightIntens);
-
   // use the Stream interface to print the contents
   while (mqttClient.available()) {
-    Serial.print((char)mqttClient.read());
+    x = (char)mqttClient.read();
+    lightIntens += (x - '0') * pow(10, cnt);
+    cnt--;
   }
-  Serial.println();
   Serial.println();
 
   LED_Multiplier = lightIntens / 100;  //percentage divided by 100 = value between 0 and 1
-
-  return LED_Multiplier;
+  Serial.println(LED_Multiplier);
+  return;
 
 }
 
@@ -200,7 +202,7 @@ void setup() {
   mqttClient.onMessage(onMqttMessage);
 
   Serial.print("Subscribing to topic: ");
-  Serial.println(topic);
+  Serial.println(topic2);
   Serial.println();
 
   // subscribe to a topic
