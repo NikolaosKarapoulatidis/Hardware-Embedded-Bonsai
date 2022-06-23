@@ -21,6 +21,7 @@ float tem = dht.readTemperature();
 float maxhum = 69;
 float maxtem = 32;
 long current_time = millis();
+long loop_time = 0;
 long old_time = 0;
 
 #define Echo_InputPin 7 // Echo input pin
@@ -38,9 +39,56 @@ MqttClient mqttClient(wifiClient);
 
 const char broker[] = "192.168.178.46";
 int        port     = 1883;
-const char topic[]  = "testTopic";
+const char topictem[]  = "Topictem";
+const char topichum[]  = "Topichum";
 
 const char topic2[]  = "lightIntensity"; //NEW
+const char topicmaxtem[]  = "Topicmaxtem";
+const char topicmaxhum[]  = "Topicmaxhum";
+
+
+
+void onMqttMessage(int lengthmsg) {
+  int cnt = lengthmsg - 1;
+  char x;
+  float lightIntens = 0;
+  // we received a message, print out the topic and contents
+  Serial.println("Received a message with topic '");
+  Serial.print(mqttClient.messageTopic());
+
+  // use the Stream interface to print the contents
+
+  if (mqttClient.messageTopic() == "lightIntensity") {
+    while (mqttClient.available()) {
+      x = (char)mqttClient.read();
+      lightIntens += (x - '0') * pow(10, cnt);
+      cnt--;
+    }
+    Serial.println();
+    LED_Multiplier = lightIntens / 100;  //percentage divided by 100 = value between 0 and 1
+    Serial.println(LED_Multiplier);
+  }
+  if (mqttClient.messageTopic() == "Topicmaxtem") {
+    while (mqttClient.available()) {
+      x = (char)mqttClient.read();
+      lightIntens += (x - '0') * pow(10, cnt);
+      cnt--;
+      maxtem = lightIntens;
+    }
+    Serial.println(maxtem);
+  }
+  if (mqttClient.messageTopic() == "Topicmaxhum") {
+    while (mqttClient.available()) {
+      x = (char)mqttClient.read();
+      lightIntens += (x - '0') * pow(10, cnt);
+      cnt--;
+      maxhum = lightIntens;
+    }
+    Serial.println(maxhum);
+  }
+  return;
+
+}
 
 void Fan()
 {
@@ -171,79 +219,49 @@ void setup() {
   pinMode(exhaust_fan, OUTPUT);
   pinMode(circulation_fan, OUTPUT);
 
- // set the message receive callback         //NEW
+  // set the message receive callback         //NEW
   mqttClient.onMessage(onMqttMessage);
-
-  Serial.print("Subscribing to topic: ");
-  Serial.println(topic);
-  Serial.println();
 
   // subscribe to a topic
   mqttClient.subscribe(topic2);
-
-
-}
-
-
-void onMqttMessage(int lightIntens) {                           //NEW
-  // we received a message, print out the topic and contents
-  Serial.println("Received a message with topic '");
-  Serial.print(mqttClient.messageTopic());
-
-  Serial.print(lightIntens);
-
-  // use the Stream interface to print the contents
-  while (mqttClient.available()) {
-    Serial.print((char)mqttClient.read());
-  }
-  Serial.println();
-  Serial.println();
-
-  LED_Multiplier = lightIntens / 100;  //percentage divided by 100 = value between 0 and 1
-
-  return LED_Multiplier;
+  //mqttClient.subscribe(topictem);
+  //mqttClient.subscribe(topichum);
 
 }
-
 
 void loop() {
   // put your main code here, to run repeatedly:
-  delay(1000);
-  mqttClient.poll(); //keep the connection alive
   current_time = millis();
+  if (current_time - loop_time > 1000)
+  {
+    loop_time = millis();
+    mqttClient.poll(); //keep the connection alive
 
-  Serial.print("Distance: ");
-  Serial.println(Distance());
-  MotorLight();
+    Serial.print("Distance: ");
+    Serial.println(Distance());
+    MotorLight();
 
-  hum = dht.readHumidity();
-  tem = dht.readTemperature();
-  Serial.print("Temperature: ");
-  Serial.print(tem);
-  Serial.print(", Humidity: ");
-  Serial.println(hum);
+    hum = dht.readHumidity();
+    tem = dht.readTemperature();
+    Serial.print("Temperature: ");
+    Serial.print(tem);
+    Serial.print(", Humidity: ");
+    Serial.println(hum);
 
-  Serial.print("Light intensity: ");
-  Serial.println(analogRead(photor));
-  Lightstrength(LED_Multiplier);
+    Serial.print("Light intensity: ");
+    Serial.println(analogRead(photor));
+    Lightstrength(LED_Multiplier);
 
-  Serial.println();
+    Serial.println();
 
-  Fan();
+    Fan();
 
-  mqttClient.beginMessage(topic);led_percentage
-  mqttClient.print("temperature: ");
-  mqttClient.print(tem);
-  mqttClient.print(", humidity: ");
-  mqttClient.println(hum);
+    mqttClient.beginMessage(topictem);
+    mqttClient.print(tem);
+    mqttClient.endMessage();
 
-  mqttClient.print("Exhaust fan: ");
-  mqttClient.print(ex_fan);
-  mqttClient.print(", circulation fan: ");
-  mqttClient.println(cir_fan);
-
-  mqttClient.print("LED strength: ");
-  mqttClient.print(led_percentage);
-  mqttClient.print(" percent");
-  mqttClient.endMessage();
+    mqttClient.beginMessage(topichum);
+    mqttClient.println(hum);
+    mqttClient.endMessage();
+  }
 }
