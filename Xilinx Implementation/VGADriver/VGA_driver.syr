@@ -4,7 +4,7 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.23 secs
+Total CPU time to Xst completion: 0.22 secs
  
 --> Parameter xsthdpdir set to xst
 
@@ -68,7 +68,7 @@ Automatic Register Balancing       : No
 
 ---- Target Options
 Add IO Buffers                     : YES
-Global Maximum Fanout              : 500
+Global Maximum Fanout              : 100000
 Add Generic Clock Buffer(BUFG)     : 8
 Register Duplication               : YES
 Slice Packing                      : YES
@@ -105,7 +105,8 @@ Slice Utilization Ratio Delta      : 5
 *                          HDL Compilation                              *
 =========================================================================
 Compiling vhdl file "X:/Git/Hardware-Embedded-Bonsai/Xilinx Implementation/VGADriver/VGADriver.vhd" in Library work.
-Architecture arch of Entity vga_driver is up to date.
+Entity <vga_driver> compiled.
+Entity <vga_driver> (Architecture <arch>) compiled.
 
 =========================================================================
 *                     Design Hierarchy Analysis                         *
@@ -117,12 +118,309 @@ Analyzing hierarchy for entity <VGA_driver> in library <work> (architecture <arc
 *                            HDL Analysis                               *
 =========================================================================
 Analyzing Entity <VGA_driver> in library <work> (Architecture <arch>).
-ERROR:Xst:797 - "X:/Git/Hardware-Embedded-Bonsai/Xilinx Implementation/VGADriver/VGADriver.vhd" line 134: unsupported Clock statement.
+Entity <VGA_driver> analyzed. Unit <VGA_driver> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <VGA_driver>.
+    Related source file is "X:/Git/Hardware-Embedded-Bonsai/Xilinx Implementation/VGADriver/VGADriver.vhd".
+    Found 1-bit register for signal <HSYNC>.
+    Found 1-bit register for signal <VSYNC>.
+    Found 3-bit register for signal <RGB>.
+    Found 1-bit register for signal <clk25>.
+    Found 32-bit up counter for signal <hPos>.
+    Found 32-bit comparator greater for signal <HSYNC$cmp_gt0000> created at line 109.
+    Found 32-bit comparator lessequal for signal <HSYNC$cmp_le0000> created at line 109.
+    Found 32-bit comparator greatequal for signal <RGB$cmp_ge0000> created at line 151.
+    Found 32-bit comparator greatequal for signal <RGB$cmp_ge0001> created at line 151.
+    Found 32-bit comparator lessequal for signal <RGB$cmp_le0000> created at line 151.
+    Found 32-bit comparator lessequal for signal <RGB$cmp_le0001> created at line 151.
+    Found 1-bit register for signal <videoOn>.
+    Found 32-bit comparator lessequal for signal <videoOn$cmp_le0000> created at line 135.
+    Found 32-bit comparator lessequal for signal <videoOn$cmp_le0001> created at line 135.
+    Found 32-bit up counter for signal <vPos>.
+    Found 32-bit comparator greater for signal <VSYNC$cmp_gt0000> created at line 123.
+    Found 32-bit comparator lessequal for signal <VSYNC$cmp_le0000> created at line 123.
+    Summary:
+	inferred   2 Counter(s).
+	inferred   7 D-type flip-flop(s).
+	inferred  10 Comparator(s).
+Unit <VGA_driver> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 2
+ 32-bit up counter                                     : 2
+# Registers                                            : 5
+ 1-bit register                                        : 4
+ 3-bit register                                        : 1
+# Comparators                                          : 10
+ 32-bit comparator greatequal                          : 2
+ 32-bit comparator greater                             : 2
+ 32-bit comparator lessequal                           : 6
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 2
+ 32-bit up counter                                     : 2
+# Registers                                            : 7
+ Flip-Flops                                            : 7
+# Comparators                                          : 10
+ 32-bit comparator greatequal                          : 2
+ 32-bit comparator greater                             : 2
+ 32-bit comparator lessequal                           : 6
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2261 - The FF/Latch <RGB_0> in Unit <VGA_driver> is equivalent to the following 2 FFs/Latches, which will be removed : <RGB_1> <RGB_2> 
+
+Optimizing unit <VGA_driver> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block VGA_driver, actual ratio is 1.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 69
+ Flip-Flops                                            : 69
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : VGA_driver.ngr
+Top Level Output File Name         : VGA_driver
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 7
+
+Cell Usage :
+# BELS                             : 501
+#      GND                         : 1
+#      INV                         : 26
+#      LUT1                        : 72
+#      LUT2                        : 74
+#      LUT2_L                      : 1
+#      LUT3                        : 5
+#      LUT4                        : 75
+#      MUXCY                       : 182
+#      VCC                         : 1
+#      XORCY                       : 64
+# FlipFlops/Latches                : 69
+#      FDC                         : 35
+#      FDCE                        : 32
+#      FDR                         : 2
+# Clock Buffers                    : 2
+#      BUFG                        : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 6
+#      IBUF                        : 1
+#      OBUF                        : 5
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s1000ft256-5 
+
+ Number of Slices:                      136  out of   7680     1%  
+ Number of Slice Flip Flops:             69  out of  15360     0%  
+ Number of 4 input LUTs:                253  out of  15360     1%  
+ Number of IOs:                           7
+ Number of bonded IOBs:                   7  out of    173     4%  
+ Number of GCLKs:                         2  out of      8    25%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk251                             | BUFG                   | 68    |
+CLK                                | BUFGP                  | 1     |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+RST                                | IBUF                   | 67    |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 6.533ns (Maximum Frequency: 153.060MHz)
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: 6.306ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk251'
+  Clock period: 6.533ns (frequency: 153.060MHz)
+  Total number of paths / destination ports: 4432 / 100
+-------------------------------------------------------------------------
+Delay:               6.533ns (Levels of Logic = 32)
+  Source:            vPos_2 (FF)
+  Destination:       vPos_31 (FF)
+  Source Clock:      clk251 rising
+  Destination Clock: clk251 rising
+
+  Data Path: vPos_2 to vPos_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             6   0.626   1.148  vPos_2 (vPos_2)
+     LUT1:I0->O            1   0.479   0.000  Mcount_vPos_cy<2>_rt (Mcount_vPos_cy<2>_rt)
+     MUXCY:S->O            1   0.435   0.000  Mcount_vPos_cy<2> (Mcount_vPos_cy<2>)
+     MUXCY:CI->O           1   0.056   0.000  Mcount_vPos_cy<3> (Mcount_vPos_cy<3>)
+     MUXCY:CI->O           1   0.056   0.000  Mcount_vPos_cy<4> (Mcount_vPos_cy<4>)
+     MUXCY:CI->O           1   0.056   0.000  Mcount_vPos_cy<5> (Mcount_vPos_cy<5>)
+     MUXCY:CI->O           1   0.056   0.000  Mcount_vPos_cy<6> (Mcount_vPos_cy<6>)
+     MUXCY:CI->O           1   0.056   0.000  Mcount_vPos_cy<7> (Mcount_vPos_cy<7>)
+     MUXCY:CI->O           1   0.056   0.000  Mcount_vPos_cy<8> (Mcount_vPos_cy<8>)
+     MUXCY:CI->O           1   0.056   0.000  Mcount_vPos_cy<9> (Mcount_vPos_cy<9>)
+     MUXCY:CI->O           1   0.056   0.000  Mcount_vPos_cy<10> (Mcount_vPos_cy<10>)
+     MUXCY:CI->O           1   0.056   0.000  Mcount_vPos_cy<11> (Mcount_vPos_cy<11>)
+     MUXCY:CI->O           1   0.056   0.000  Mcount_vPos_cy<12> (Mcount_vPos_cy<12>)
+     MUXCY:CI->O           1   0.056   0.000  Mcount_vPos_cy<13> (Mcount_vPos_cy<13>)
+     MUXCY:CI->O           1   0.056   0.000  Mcount_vPos_cy<14> (Mcount_vPos_cy<14>)
+     MUXCY:CI->O           1   0.056   0.000  Mcount_vPos_cy<15> (Mcount_vPos_cy<15>)
+     MUXCY:CI->O           1   0.056   0.000  Mcount_vPos_cy<16> (Mcount_vPos_cy<16>)
+     MUXCY:CI->O           1   0.056   0.000  Mcount_vPos_cy<17> (Mcount_vPos_cy<17>)
+     MUXCY:CI->O           1   0.056   0.000  Mcount_vPos_cy<18> (Mcount_vPos_cy<18>)
+     MUXCY:CI->O           1   0.056   0.000  Mcount_vPos_cy<19> (Mcount_vPos_cy<19>)
+     MUXCY:CI->O           1   0.056   0.000  Mcount_vPos_cy<20> (Mcount_vPos_cy<20>)
+     MUXCY:CI->O           1   0.056   0.000  Mcount_vPos_cy<21> (Mcount_vPos_cy<21>)
+     MUXCY:CI->O           1   0.056   0.000  Mcount_vPos_cy<22> (Mcount_vPos_cy<22>)
+     MUXCY:CI->O           1   0.056   0.000  Mcount_vPos_cy<23> (Mcount_vPos_cy<23>)
+     MUXCY:CI->O           1   0.056   0.000  Mcount_vPos_cy<24> (Mcount_vPos_cy<24>)
+     MUXCY:CI->O           1   0.056   0.000  Mcount_vPos_cy<25> (Mcount_vPos_cy<25>)
+     MUXCY:CI->O           1   0.056   0.000  Mcount_vPos_cy<26> (Mcount_vPos_cy<26>)
+     MUXCY:CI->O           1   0.056   0.000  Mcount_vPos_cy<27> (Mcount_vPos_cy<27>)
+     MUXCY:CI->O           1   0.056   0.000  Mcount_vPos_cy<28> (Mcount_vPos_cy<28>)
+     MUXCY:CI->O           1   0.056   0.000  Mcount_vPos_cy<29> (Mcount_vPos_cy<29>)
+     MUXCY:CI->O           0   0.056   0.000  Mcount_vPos_cy<30> (Mcount_vPos_cy<30>)
+     XORCY:CI->O           1   0.786   0.851  Mcount_vPos_xor<31> (Result<31>1)
+     LUT2:I1->O            1   0.479   0.000  Mcount_vPos_eqn_311 (Mcount_vPos_eqn_31)
+     FDCE:D                    0.176          vPos_31
+    ----------------------------------------
+    Total                      6.533ns (4.535ns logic, 1.998ns route)
+                                       (69.4% logic, 30.6% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'CLK'
+  Clock period: 2.263ns (frequency: 441.803MHz)
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               2.263ns (Levels of Logic = 0)
+  Source:            clk25 (FF)
+  Destination:       clk25 (FF)
+  Source Clock:      CLK rising
+  Destination Clock: CLK rising
+
+  Data Path: clk25 to clk25
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              2   0.626   0.745  clk25 (clk251)
+     FDR:R                     0.892          clk25
+    ----------------------------------------
+    Total                      2.263ns (1.518ns logic, 0.745ns route)
+                                       (67.1% logic, 32.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk251'
+  Total number of paths / destination ports: 5 / 5
+-------------------------------------------------------------------------
+Offset:              6.306ns (Levels of Logic = 1)
+  Source:            RGB_0 (FF)
+  Destination:       RGB<2> (PAD)
+  Source Clock:      clk251 rising
+
+  Data Path: RGB_0 to RGB<2>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              3   0.626   0.771  RGB_0 (RGB_0)
+     OBUF:I->O                 4.909          RGB_2_OBUF (RGB<2>)
+    ----------------------------------------
+    Total                      6.306ns (5.535ns logic, 0.771ns route)
+                                       (87.8% logic, 12.2% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 10.00 secs
+Total CPU time to Xst completion: 9.99 secs
+ 
 --> 
 
-Total memory usage is 4498100 kilobytes
+Total memory usage is 4514512 kilobytes
 
-Number of errors   :    1 (   0 filtered)
+Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)
-Number of infos    :    0 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
 

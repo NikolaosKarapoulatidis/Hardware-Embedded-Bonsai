@@ -26,23 +26,56 @@
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="VGADriver.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="VGADriver.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="VGADriver.xst"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="VGA_driver.bld"/>
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="VGA_driver.cmd_log"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="VGA_driver.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NCD" xil_pn:name="VGA_driver.ncd" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="VGA_driver.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGD" xil_pn:name="VGA_driver.ngd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="VGA_driver.ngr"/>
+    <file xil_pn:fileType="FILE_PAD_MISC" xil_pn:name="VGA_driver.pad"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAR_REPORT" xil_pn:name="VGA_driver.par" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PCF" xil_pn:name="VGA_driver.pcf" xil_pn:subbranch="Map"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="VGA_driver.prj"/>
-    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="VGA_driver.stx"/>
+    <file xil_pn:fileType="FILE_TRCE_MISC" xil_pn:name="VGA_driver.ptwx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="VGA_driver.stx"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="VGA_driver.syr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_TIMING_TXT_REPORT" xil_pn:name="VGA_driver.twr" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_TIMING_XML_REPORT" xil_pn:name="VGA_driver.twx" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_UNROUTES" xil_pn:name="VGA_driver.unroutes" xil_pn:subbranch="Par"/>
+    <file xil_pn:fileType="FILE_XPI" xil_pn:name="VGA_driver.xpi"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="VGA_driver.xst"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="VGA_driver_envsettings.html"/>
+    <file xil_pn:fileType="FILE_NCD" xil_pn:name="VGA_driver_guide.ncd" xil_pn:origination="imported"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="VGA_driver_map.map" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="VGA_driver_map.mrp" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NCD" xil_pn:name="VGA_driver_map.ncd" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGM" xil_pn:name="VGA_driver_map.ngm" xil_pn:subbranch="Map"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="VGA_driver_map.xrpt"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="VGA_driver_ngdbuild.xrpt"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAD_EXCEL_REPORT" xil_pn:name="VGA_driver_pad.csv" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAD_TXT_REPORT" xil_pn:name="VGA_driver_pad.txt" xil_pn:subbranch="Par"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="VGA_driver_par.xrpt"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="VGA_driver_summary.html"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="VGA_driver_summary.xml"/>
+    <file xil_pn:fileType="FILE_WEBTALK" xil_pn:name="VGA_driver_usage.xml"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="VGA_driver_vhdl.prj"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="VGA_driver_xst.xrpt"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="_ngo"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/map.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/par.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/trce.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xlnx_auto_0_xdb"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
     <transform xil_pn:end_ts="1655920267" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1655920267">
       <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
     </transform>
     <transform xil_pn:end_ts="1655920267" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="-758444915733381531" xil_pn:start_ts="1655920267">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -68,12 +101,17 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1655920275" xil_pn:in_ck="-444091164261713062" xil_pn:name="TRANEXT_xstsynthesize_spartan3" xil_pn:prop_ck="449487518362005995" xil_pn:start_ts="1655920267">
-      <status xil_pn:value="FailedRun"/>
+    <transform xil_pn:end_ts="1655983241" xil_pn:in_ck="-444091164261713062" xil_pn:name="TRANEXT_xstsynthesize_spartan3" xil_pn:prop_ck="-2031864591289312073" xil_pn:start_ts="1655983228">
+      <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name=".lso"/>
       <outfile xil_pn:name="VGA_driver.lso"/>
+      <outfile xil_pn:name="VGA_driver.ngc"/>
+      <outfile xil_pn:name="VGA_driver.ngr"/>
       <outfile xil_pn:name="VGA_driver.prj"/>
+      <outfile xil_pn:name="VGA_driver.stx"/>
       <outfile xil_pn:name="VGA_driver.syr"/>
       <outfile xil_pn:name="VGA_driver.xst"/>
       <outfile xil_pn:name="VGA_driver_vhdl.prj"/>
@@ -81,6 +119,53 @@
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
       <outfile xil_pn:name="xst"/>
+    </transform>
+    <transform xil_pn:end_ts="1655983436" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="7245451644592295234" xil_pn:start_ts="1655983435">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1655983446" xil_pn:in_ck="3832450650055596079" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-3317357071365074187" xil_pn:start_ts="1655983436">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="VGA_driver.bld"/>
+      <outfile xil_pn:name="VGA_driver.ngd"/>
+      <outfile xil_pn:name="VGA_driver_ngdbuild.xrpt"/>
+      <outfile xil_pn:name="_ngo"/>
+      <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+    </transform>
+    <transform xil_pn:end_ts="1655983455" xil_pn:in_ck="3832450650055596080" xil_pn:name="TRANEXT_map_spartan3" xil_pn:prop_ck="1502724157172790344" xil_pn:start_ts="1655983446">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="VGA_driver.pcf"/>
+      <outfile xil_pn:name="VGA_driver_map.map"/>
+      <outfile xil_pn:name="VGA_driver_map.mrp"/>
+      <outfile xil_pn:name="VGA_driver_map.ncd"/>
+      <outfile xil_pn:name="VGA_driver_map.ngm"/>
+      <outfile xil_pn:name="VGA_driver_map.xrpt"/>
+      <outfile xil_pn:name="VGA_driver_summary.xml"/>
+      <outfile xil_pn:name="VGA_driver_usage.xml"/>
+      <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
+    </transform>
+    <transform xil_pn:end_ts="1655983476" xil_pn:in_ck="1115509815186865993" xil_pn:name="TRANEXT_par_spartan3" xil_pn:prop_ck="5592077876867041805" xil_pn:start_ts="1655983455">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="VGA_driver.ncd"/>
+      <outfile xil_pn:name="VGA_driver.pad"/>
+      <outfile xil_pn:name="VGA_driver.par"/>
+      <outfile xil_pn:name="VGA_driver.ptwx"/>
+      <outfile xil_pn:name="VGA_driver.unroutes"/>
+      <outfile xil_pn:name="VGA_driver.xpi"/>
+      <outfile xil_pn:name="VGA_driver_pad.csv"/>
+      <outfile xil_pn:name="VGA_driver_pad.txt"/>
+      <outfile xil_pn:name="VGA_driver_par.xrpt"/>
+      <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
+    </transform>
+    <transform xil_pn:end_ts="1655983476" xil_pn:in_ck="3832450650055595948" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416187" xil_pn:start_ts="1655983471">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="VGA_driver.twr"/>
+      <outfile xil_pn:name="VGA_driver.twx"/>
+      <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>
     </transform>
   </transforms>
 

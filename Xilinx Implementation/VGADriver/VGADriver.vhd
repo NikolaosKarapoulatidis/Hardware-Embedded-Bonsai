@@ -130,14 +130,13 @@ end process;
 
 Video_On:process(clk25, RST, vPos, hPos)   
 begin
-	if(RST = '1')then
-		videoOn <= '0';
-
-	elsif(clk25'event and clk = '1')then
+	if(clk25'event and clk25 = '1')then
+										 
 		if(hPos <= HD and vPos <= VD)then     	 --ensures that the video is only on when the actual position is not inside a porch
-			videoOn <= '1';
+				videoOn <= '1';
 		else
-			videoOn <= '0';
+				videoOn <= '0';
+		
 		end if;
 	end if;
 end process;
@@ -147,15 +146,15 @@ begin
 	if(RST = '1')then
 		RGB <= "000";
 
-	elsif(clk25'event and clk = '1')then
+	elsif(clk25'event and clk25 = '1')then
 		if(videoOn = '1')then
 			if((hPos >= 10 and hPos <= 60) and (vPos >= 10 and vPos <= 60))then  --only inside this boundaries the pixel are white which creates a square
 				RGB <= "111";
 			else
-				RGB <= "000";
+			RGB <= "000";
 			end if;
 		else
-			RGB <= "000";
+		RGB <= "000";
 		end if;
 	end if;
 end process;
