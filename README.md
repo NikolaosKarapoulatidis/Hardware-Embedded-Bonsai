@@ -10,4 +10,5 @@ Github Repository belongs to the following members:
 We are students in Hochschule Hamm-Lippstadt studying in our 6th Semester. This course is supervised by Professor Ali Hayek. The repository will contain our lab work which consists of:
 
 1) Coding Exercises in VHDL
-2) Arduino IOT Project
+2) VGA Driver Implemented in VHDL
+3) Arduino IOT Project connected to a Raspberry Pi using MQTT
