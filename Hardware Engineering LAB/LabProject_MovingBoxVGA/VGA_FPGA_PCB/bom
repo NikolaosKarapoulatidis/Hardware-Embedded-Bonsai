@@ -1,0 +1,39 @@
+Partlist
+
+Exported from vga_fpga.brd at 24.06.2022 15:23
+
+EAGLE Version 9.6.2 Copyright (c) 1988-2020 Autodesk, Inc.
+
+Assembly variant: 
+
+Part     Value              Package              Library             Position (mil)        Orientation
+
+C1       0.1uF              0603                 SparkFun-Capacitors (1150 1400)           R270
+J1       POWER_JACK         POWER_JACK_PTH       SparkFun-Connectors (0 1000)              R270
+R1       270                0603                 SparkFun-Resistors  (850 1950)            R0
+R2       270                0603                 SparkFun-Resistors  (850 2050)            R0
+R3       270                0603                 SparkFun-Resistors  (850 2150)            R0
+R4       82.5               0603                 SparkFun-Resistors  (850 2250)            R0
+R5       82.5               0603                 SparkFun-Resistors  (850 2350)            R0
+R6       1000               0603                 SparkFun-Resistors  (1850 800)            R90
+R7       1000               0603                 SparkFun-Resistors  (1400 800)            R270
+R8       1000               0603                 SparkFun-Resistors  (1250 800)            R90
+U$1      DB15               DB15                 SparkFun-Retired    (250 2100)            R90
+U$2      XC3S250/500E-PQ208 PQ208                SparkFun-Retired    (1900 2050)           R0
+U1.2     V_REG_317SMD       SOT223               SparkFun-IC-Power   (1500 1100)           R180
+U2.5V    V_REG_317SMD       SOT223               SparkFun-IC-Power   (1950 1100)           R180
+Y1       OSCILLATORSMD-5X3  OSCILLATOR-SMD-5X3.2 SparkFun-Clocks     (950 1400)            R90
+
+
+Part    Value   Package Cost
+C1      0.1 uF  0603    0.10€
+J1      PW_Jack         0.62€
+R1-3    270 Ohm 0603    0.55€ (10 pieces)
+R4-5    82.5 Ohm 0603   0.50€ (5 pieces)
+R6-8    1000 Ohm 0603   0.45€ (10 pieces)
+U$2                     22.07€
+V_REG   317SMD   SOT223 1.30€ (2 pieces)
+Y1                      1.68€
+
+
+
