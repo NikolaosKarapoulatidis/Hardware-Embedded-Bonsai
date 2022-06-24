@@ -31,7 +31,7 @@ begin
 	clk<='0';
 end process;
 
-state_gen:process
+reset_gen:process
 begin
 	wait for 100 ns;
 	rst<='0';
