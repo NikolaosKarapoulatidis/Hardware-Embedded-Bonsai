@@ -2,14 +2,15 @@ Release 14.7 ngdbuild P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 Command Line: X:\Installs\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe
--intstyle ise -dd _ngo -nt timestamp -i -p xc3s1000-ft256-5 VGA_driver.ngc
-VGA_driver.ngd
+-intstyle ise -dd _ngo -nt timestamp -uc vgadriver.ucf -p xc3s1000-ft256-5
+VGA_driver.ngc VGA_driver.ngd
 
 Reading NGO file "X:/Git/Hardware-Embedded-Bonsai/Xilinx
 Implementation/VGADriver/VGA_driver.ngc" ...
 Gathering constraint information from source properties...
 Done.
 
+Annotating constraints to design from ucf file "vgadriver.ucf" ...
 Resolving constraint associations...
 Checking Constraint Associations...
 Done...
@@ -27,10 +28,10 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:   0
 
-Total memory usage is 4398276 kilobytes
+Total memory usage is 4398224 kilobytes
 
 Writing NGD file "VGA_driver.ngd" ...
-Total REAL time to NGDBUILD completion:  6 sec
-Total CPU time to NGDBUILD completion:   6 sec
+Total REAL time to NGDBUILD completion:  5 sec
+Total CPU time to NGDBUILD completion:   5 sec
 
 Writing NGDBUILD log file "VGA_driver.bld"...

@@ -1,0 +1,17 @@
+Release 14.7 - ngc2edif P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design VGA_driver.ngc ...
+WARNING:NetListWriters:298 - No output is written to VGA_driver.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus Mcompar_RGB_cmp_ge0000_lut<10 : 1> on
+   block VGA_driver is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus Mcompar_RGB_cmp_ge0001_lut<10 : 1> on
+   block VGA_driver is not reconstructed, because there are some missing bus
+   signals.
+  finished :Prep
+Writing EDIF netlist file VGA_driver.edif ...
+ngc2edif: Total memory usage is 4315388 kilobytes
+

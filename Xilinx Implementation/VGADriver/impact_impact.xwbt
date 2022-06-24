@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=X:\Git\Hardware-Embedded-Bonsai\Xilinx Implementation\VGADriver\impact.xsl
+OUTFILE=X:\Git\Hardware-Embedded-Bonsai\Xilinx Implementation\VGADriver\impact.xsl
+FAMILY=None
+PART=None
+WORKINGDIR=X:\Git\Hardware-Embedded-Bonsai\Xilinx Implementation\VGADriver
+LICENSE=iMPACT
+USER_INFO=iMPACT

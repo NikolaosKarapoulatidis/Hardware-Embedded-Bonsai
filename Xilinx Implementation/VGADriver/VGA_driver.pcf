@@ -1,8 +1,13 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Thu Jun 23 16:07:01 2022
+// Written by: Map P.20131013 on Fri Jun 24 15:24:24 2022
 //! **************************************************************************
 
 SCHEMATIC START;
+COMP "VSYNC" LOCATE = SITE "F14" LEVEL 1;
+COMP "RGB<0>" LOCATE = SITE "H14" LEVEL 1;
+COMP "RGB<1>" LOCATE = SITE "H15" LEVEL 1;
+COMP "RGB<2>" LOCATE = SITE "G15" LEVEL 1;
+COMP "HSYNC" LOCATE = SITE "F15" LEVEL 1;
 NET "CLK_BUFGP/IBUFG" BEL "CLK_BUFGP/BUFG.GCLKMUX" USELOCALCONNECT;
 SCHEMATIC END;
 
