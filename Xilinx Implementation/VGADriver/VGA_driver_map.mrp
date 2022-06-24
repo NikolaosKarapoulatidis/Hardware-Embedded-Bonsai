@@ -9,7 +9,7 @@ Target Device  : xc3s1000
 Target Package : ft256
 Target Speed   : -5
 Mapper Version : spartan3 -- $Revision: 1.55 $
-Mapped Date    : Fri Jun 24 15:24:19 2022
+Mapped Date    : Fri Jun 24 15:34:12 2022
 
 Design Summary
 --------------
@@ -35,8 +35,8 @@ Logic Distribution:
 
 Average Fanout of Non-Clock Nets:                3.28
 
-Peak Memory Usage:  4439 MB
-Total REAL time to MAP completion:  6 secs 
+Peak Memory Usage:  4449 MB
+Total REAL time to MAP completion:  3 secs 
 Total CPU time to MAP completion:   2 secs 
 
 NOTES:
@@ -105,7 +105,7 @@ Section 6 - IOB Properties
 | IOB Name                           | Type             | Direction | IO Standard          | Diff  | Drive    | Slew | Reg (s)      | Resistor | IOB      |
 |                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| CLK                                | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| CLK                                | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
 | HSYNC                              | IOB              | OUTPUT    | LVTTL                |       | 8        | FAST |              |          |          |
 | RGB<0>                             | IOB              | OUTPUT    | LVTTL                |       | 8        | FAST |              |          |          |
 | RGB<1>                             | IOB              | OUTPUT    | LVTTL                |       | 8        | FAST |              |          |          |

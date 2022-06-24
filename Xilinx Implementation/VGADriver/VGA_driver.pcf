@@ -1,8 +1,10 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Fri Jun 24 15:24:24 2022
+// Written by: Map P.20131013 on Fri Jun 24 15:34:15 2022
 //! **************************************************************************
 
 SCHEMATIC START;
+COMP "CLK" LOCATE = SITE "C9" LEVEL 1;
+COMP "RST" LOCATE = SITE "P14" LEVEL 1;
 COMP "VSYNC" LOCATE = SITE "F14" LEVEL 1;
 COMP "RGB<0>" LOCATE = SITE "H14" LEVEL 1;
 COMP "RGB<1>" LOCATE = SITE "H15" LEVEL 1;

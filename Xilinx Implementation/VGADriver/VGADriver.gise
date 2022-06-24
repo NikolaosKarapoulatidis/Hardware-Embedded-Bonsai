@@ -45,6 +45,7 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_TIMING_XML_REPORT" xil_pn:name="VGA_driver.twx" xil_pn:subbranch="Par"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_UNROUTES" xil_pn:name="VGA_driver.unroutes" xil_pn:subbranch="Par"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_REPORT" xil_pn:name="VGA_driver.ut" xil_pn:subbranch="FPGAConfiguration"/>
+    <file xil_pn:fileType="FILE_VHDL_INSTTEMPLATE" xil_pn:name="VGA_driver.vhi"/>
     <file xil_pn:fileType="FILE_XPI" xil_pn:name="VGA_driver.xpi"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="VGA_driver.xst"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="VGA_driver_envsettings.html"/>
@@ -118,6 +119,8 @@
     <transform xil_pn:end_ts="1656077320" xil_pn:in_ck="-444091164261713062" xil_pn:name="TRANEXT_xstsynthesize_spartan3" xil_pn:prop_ck="-2031864591289312073" xil_pn:start_ts="1656077306">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name=".lso"/>
       <outfile xil_pn:name="VGA_driver.lso"/>
       <outfile xil_pn:name="VGA_driver.ngc"/>
@@ -132,30 +135,34 @@
       <outfile xil_pn:name="webtalk_pn.xml"/>
       <outfile xil_pn:name="xst"/>
     </transform>
-    <transform xil_pn:end_ts="1656077047" xil_pn:in_ck="-744015803426267402" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="7245451644592295234" xil_pn:start_ts="1656077047">
+    <transform xil_pn:end_ts="1656077641" xil_pn:in_ck="-744015803426267402" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="7245451644592295234" xil_pn:start_ts="1656077641">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="InputChanged"/>
     </transform>
-    <transform xil_pn:end_ts="1656077056" xil_pn:in_ck="-6845994138215576699" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-3317357071365074187" xil_pn:start_ts="1656077047">
+    <transform xil_pn:end_ts="1656077650" xil_pn:in_ck="-6845994138215576699" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-3317357071365074187" xil_pn:start_ts="1656077641">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="VGA_driver.bld"/>
       <outfile xil_pn:name="VGA_driver.ngd"/>
       <outfile xil_pn:name="VGA_driver_ngdbuild.xrpt"/>
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1656077067" xil_pn:in_ck="-7145872365895727834" xil_pn:name="TRANEXT_map_spartan3" xil_pn:prop_ck="1502724157172790344" xil_pn:start_ts="1656077056">
+    <transform xil_pn:end_ts="1656077657" xil_pn:in_ck="-7145872365895727834" xil_pn:name="TRANEXT_map_spartan3" xil_pn:prop_ck="1502724157172790344" xil_pn:start_ts="1656077650">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="VGA_driver.pcf"/>
       <outfile xil_pn:name="VGA_driver_map.map"/>
       <outfile xil_pn:name="VGA_driver_map.mrp"/>
@@ -166,7 +173,7 @@
       <outfile xil_pn:name="VGA_driver_usage.xml"/>
       <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1656077088" xil_pn:in_ck="3239558288764546271" xil_pn:name="TRANEXT_par_spartan3" xil_pn:prop_ck="5592077876867041805" xil_pn:start_ts="1656077067">
+    <transform xil_pn:end_ts="1656077676" xil_pn:in_ck="3239558288764546271" xil_pn:name="TRANEXT_par_spartan3" xil_pn:prop_ck="5592077876867041805" xil_pn:start_ts="1656077657">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
@@ -183,14 +190,10 @@
       <outfile xil_pn:name="VGA_driver_par.xrpt"/>
       <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1655993334" xil_pn:in_ck="3832450650055595948" xil_pn:name="TRANEXT_bitFile_spartan3" xil_pn:prop_ck="-2672950586390118423" xil_pn:start_ts="1655993322">
+    <transform xil_pn:end_ts="1656077877" xil_pn:in_ck="3832450650055595948" xil_pn:name="TRANEXT_bitFile_spartan3" xil_pn:prop_ck="-2672950586390118423" xil_pn:start_ts="1656077865">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="VGA_driver.ut"/>
       <outfile xil_pn:name="_xmsgs/bitgen.xmsgs"/>
       <outfile xil_pn:name="usage_statistics_webtalk.html"/>
@@ -203,7 +206,9 @@
     <transform xil_pn:end_ts="1655993351" xil_pn:in_ck="-6114072969903131178" xil_pn:name="TRAN_impactProgrammingTool" xil_pn:prop_ck="-6864680952955714571" xil_pn:start_ts="1655993351">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="InputChanged"/>
     </transform>
     <transform xil_pn:end_ts="1656077094" xil_pn:in_ck="-4455434459534881246" xil_pn:name="TRAN_fpgaFloorplanPostPAR" xil_pn:start_ts="1656077094">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -212,12 +217,10 @@
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="InputChanged"/>
     </transform>
-    <transform xil_pn:end_ts="1655993791" xil_pn:in_ck="3832450650055595948" xil_pn:name="TRAN_XPower" xil_pn:prop_ck="999919393156693590" xil_pn:start_ts="1655993791">
+    <transform xil_pn:end_ts="1656077889" xil_pn:in_ck="3832450650055595948" xil_pn:name="TRAN_XPower" xil_pn:prop_ck="999919393156693590" xil_pn:start_ts="1656077889">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="InputChanged"/>
     </transform>
     <transform xil_pn:end_ts="1655993916" xil_pn:in_ck="3832450650055595948" xil_pn:name="TRAN_genPowerData" xil_pn:prop_ck="-1928928001194970399" xil_pn:start_ts="1655993911">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -229,7 +232,7 @@
       <outfile xil_pn:name="VGA_driver.pwr"/>
       <outfile xil_pn:name="_xmsgs/xpwr.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1656077088" xil_pn:in_ck="-4455434459534881246" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416187" xil_pn:start_ts="1656077083">
+    <transform xil_pn:end_ts="1656077676" xil_pn:in_ck="-4455434459534881246" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416187" xil_pn:start_ts="1656077671">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
@@ -238,6 +241,13 @@
       <outfile xil_pn:name="VGA_driver.twr"/>
       <outfile xil_pn:name="VGA_driver.twx"/>
       <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>
+    </transform>
+    <transform xil_pn:end_ts="1656078064" xil_pn:in_ck="-7145872365895727834" xil_pn:name="TRAN_createTimingConstraints" xil_pn:start_ts="1656078061">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="InputChanged"/>
     </transform>
     <transform xil_pn:end_ts="1655990732" xil_pn:in_ck="3832450650055596079" xil_pn:name="TRAN_postSynthesisSimModel" xil_pn:prop_ck="-8056119725707841810" xil_pn:start_ts="1655990728">
       <status xil_pn:value="SuccessfullyRun"/>

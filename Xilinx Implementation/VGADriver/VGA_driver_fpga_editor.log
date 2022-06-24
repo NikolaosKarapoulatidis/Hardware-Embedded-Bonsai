@@ -1,55 +1,17 @@
-#:C19    
+#:C0     
 #Xilinx FPGA Editor Command Log File
 #Editor Version:
 #:V   NT M2.1 P.20131013
 #Current Working Directory:
 #:D   X:\Git\Hardware-Embedded-Bonsai\Xilinx Implementation\VGADriver
 #Date/Time:
-#:T   Fri Jun 24 15:25:00 2022
+#:T   Fri Jun 24 15:35:06 2022
 #------------------------------
 	#Reading VGA_driver.ncd...
 	#Loading device for application Rf_Device from file '3s1000.nph' in environment X:\Installs\Xilinx\14.7\ISE_DS\ISE\.
 	#   "VGA_driver" is an NCD, version 3.2, device xc3s1000, package ft256, speed -5
-	#Design creation date: 2022.06.24.13.24.23
+	#Design creation date: 2022.06.24.13.34.14
 	#Building chip graphics...
 	#Loading speed info...
 	#1
 setattr main edit-mode no-logic-changes
-	#2
-select -k comp 'CLK'
-	#3
-unselect comp 'CLK'
-	#4
-select -k comp 'clk25_BUFG'
-	#5
-unselect comp 'clk25_BUFG'
-	#6
-select -k comp 'clk251'
-	#7
-unselect comp 'clk251'
-	#8
-select -k comp 'CLK_BUFGP/BUFG'
-	#9
-unselect comp 'CLK_BUFGP/BUFG'
-	#10
-select -k comp 'hPos<1>'
-	#11
-unselect comp 'hPos<1>'
-	#12
-select -k comp 'hPos<3>'
-	#13
-unselect comp 'hPos<3>'
-	#14
-select -k comp 'hPos<5>'
-	#15
-unselect comp 'hPos<5>'
-	#16
-select -k comp 'hPos<7>'
-	#17
-unselect comp 'hPos<7>'
-	#18
-select -k comp 'hPos<9>'
-	#19
-unselect comp 'hPos<9>'
-	#20
-select -k comp 'hPos<13>'

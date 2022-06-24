@@ -41,3 +41,9 @@ map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o VGA_dri
 par -w -intstyle ise -ol high -t 1 VGA_driver_map.ncd VGA_driver.ncd VGA_driver.pcf 
 trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml VGA_driver.twx VGA_driver.ncd -o VGA_driver.twr VGA_driver.pcf -ucf vgadriver.ucf 
 xst -intstyle ise -ifn "X:/Git/Hardware-Embedded-Bonsai/Xilinx Implementation/VGADriver/VGA_driver.xst" -ofn "X:/Git/Hardware-Embedded-Bonsai/Xilinx Implementation/VGADriver/VGA_driver.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc vgadriver.ucf -p xc3s1000-ft256-5 "VGA_driver.ngc" VGA_driver.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o VGA_driver_map.ncd VGA_driver.ngd VGA_driver.pcf 
+par -w -intstyle ise -ol high -t 1 VGA_driver_map.ncd VGA_driver.ncd VGA_driver.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml VGA_driver.twx VGA_driver.ncd -o VGA_driver.twr VGA_driver.pcf -ucf vgadriver.ucf 
+bitgen -intstyle ise -f VGA_driver.ut VGA_driver.ncd 
+vhdtdtfi -prj VGADriver -o "X:/Git/Hardware-Embedded-Bonsai/Xilinx Implementation/VGADriver/VGA_driver.vhi" -module VGA_driver -template X:/Installs/Xilinx/14.7/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work VGADriver.vhd 
