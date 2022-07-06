@@ -7,7 +7,7 @@
 -- \   \   \/     Version: P.20131013
 --  \   \         Application: netgen
 --  /   /         Filename: VGA_driver_synthesis.vhd
--- /___/   /\     Timestamp: Thu Jun 23 15:25:31 2022
+-- /___/   /\     Timestamp: Wed Jul 06 20:08:15 2022
 -- \   \  /  \ 
 --  \___\/\___\
 --             

@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2022-06-25T22:03:41</DateModified>
+  <DateModified>2022-07-06T20:04:22</DateModified>
   <ModuleName>VGA_driver</ModuleName>
   <SummaryTimeStamp>2022-06-24T15:37:57</SummaryTimeStamp>
   <SavedFilePath>X:/Git/Hardware-Embedded-Bonsai/Xilinx Implementation/VGADriver/iseconfig/VGA_driver.xreport</SavedFilePath>

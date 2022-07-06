@@ -1,17 +1,167 @@
-#:C0     
+#:C69    
 #Xilinx FPGA Editor Command Log File
 #Editor Version:
 #:V   NT M2.1 P.20131013
 #Current Working Directory:
 #:D   X:\Git\Hardware-Embedded-Bonsai\Xilinx Implementation\VGADriver
 #Date/Time:
-#:T   Fri Jun 24 15:35:06 2022
+#:T   Wed Jul 06 20:25:05 2022
 #------------------------------
 	#Reading VGA_driver.ncd...
 	#Loading device for application Rf_Device from file '3s1000.nph' in environment X:\Installs\Xilinx\14.7\ISE_DS\ISE\.
 	#   "VGA_driver" is an NCD, version 3.2, device xc3s1000, package ft256, speed -5
-	#Design creation date: 2022.06.24.13.34.14
+	#Design creation date: 2022.07.06.18.07.46
 	#Building chip graphics...
 	#Loading speed info...
 	#1
 setattr main edit-mode no-logic-changes
+	#2
+select -k comp 'CLK'
+	#3
+unselect comp 'CLK'
+	#4
+select -k comp 'clk25_BUFG'
+	#5
+unselect comp 'clk25_BUFG'
+	#6
+select -k comp 'clk251'
+	#7
+unselect -all
+	#8
+select -k comp 'CLK'
+	#9
+unselect comp 'CLK'
+	#10
+select -k comp 'clk25_BUFG'
+	#11
+unselect comp 'clk25_BUFG'
+	#12
+select -k comp 'clk251'
+	#13
+unselect comp 'clk251'
+	#14
+select -k comp 'CLK_BUFGP/BUFG'
+	#15
+unselect comp 'CLK_BUFGP/BUFG'
+	#16
+select -k comp 'hPos<1>'
+	#17
+unselect comp 'hPos<1>'
+	#18
+select -k comp 'hPos<3>'
+	#19
+unselect comp 'hPos<3>'
+	#20
+select -k comp 'hPos<5>'
+	#21
+unselect comp 'hPos<5>'
+	#22
+select -k comp 'hPos<7>'
+	#23
+unselect comp 'hPos<7>'
+	#24
+select -k comp 'hPos<9>'
+	#25
+unselect comp 'hPos<9>'
+	#26
+select -k comp 'hPos<11>'
+	#27
+unselect comp 'hPos<11>'
+	#28
+select -k comp 'HSYNC'
+	#29
+unselect comp 'HSYNC'
+	#30
+select -k comp 'HSYNC_cmp_le0000'
+	#31
+unselect comp 'HSYNC_cmp_le0000'
+	#32
+select -k comp 'HSYNC_OBUF'
+	#33
+unselect comp 'HSYNC_OBUF'
+	#34
+select -k comp 'RGB<0>'
+	#35
+unselect comp 'RGB<0>'
+	#36
+select -k comp 'RGB<1>'
+	#37
+unselect comp 'RGB<1>'
+	#38
+select -k comp 'RGB<2>'
+	#39
+unselect comp 'RGB<2>'
+	#40
+select -k comp 'videoOn_not0001'
+	#41
+unselect comp 'videoOn_not0001'
+	#42
+select -k comp 'vPos<1>'
+	#43
+unselect comp 'vPos<1>'
+	#44
+select -k comp 'vPos<3>'
+	#45
+unselect comp 'vPos<3>'
+	#46
+select -k comp 'vPos<5>'
+	#47
+unselect comp 'vPos<5>'
+	#48
+select -k comp 'VSYNC'
+	#49
+unselect comp 'VSYNC'
+	#50
+select -k comp 'CLK'
+	#51
+unselect comp 'CLK'
+	#52
+select -k comp 'clk25_BUFG'
+	#53
+unselect comp 'clk25_BUFG'
+	#54
+select -k comp 'clk251'
+	#55
+unselect comp 'clk251'
+	#56
+select -k comp 'HSYNC'
+	#57
+unselect comp 'HSYNC'
+	#58
+select -k comp 'HSYNC_cmp_le0000'
+	#59
+unselect comp 'HSYNC_cmp_le0000'
+	#60
+select -k comp 'Result<0>'
+	#61
+unselect comp 'Result<0>'
+	#62
+select -k comp 'RGB<0>'
+	#63
+unselect comp 'RGB<0>'
+	#64
+select -k comp 'RGB<1>'
+	#65
+unselect comp 'RGB<1>'
+	#66
+select -k comp 'RGB<2>'
+	#67
+unselect comp 'RGB<2>'
+	#68
+select -k comp 'RST'
+	#69
+unselect comp 'RST'
+	#70
+select -k comp 'videoOn'
+	#71
+unselect comp 'videoOn'
+	#72
+select -k comp 'VSYNC'
+	#73
+unselect comp 'VSYNC'
+	#74
+select -k comp 'VSYNC_cmp_le0000'
+	#75
+unselect comp 'VSYNC_cmp_le0000'
+	#76
+select -k comp 'VSYNC_OBUF'
